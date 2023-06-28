@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ 'category.category'|trans({'%id%': category.id|default('')}) }}
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h1 class="user-details">{{ 'category.category'|trans({'%id%': category.id|default('')}) }}</h1>
+    {% if category is defined and category|length %}
+
+            <h1 class="user-text">{{ 'id.id'|trans }}</h1>
+            <h1 class="user-data">{{ category.id }}</h1>
+            <h1 class="user-text">{{ 'title.title'|trans }}</h1>
+            <h1 class="user-data">{{ category.title }}</h1>
+
+
+        <h2 class="user-details">{{ 'Songs.in.this.category'|trans }}</h2>
+        {% if category.tasks is not empty %}
+            <ul>
+                {% for task in category.tasks %}
+                    <li class="user-data">{{ task.title }}</li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>{{ 'message.empty_list'|trans }}</p>
+        {% endif %}
+
+        <p>
+            <a class="back-btn" href="{{ url('category_index') }}" title="{{ 'back.to.list'|trans }}">
+                {{ 'back.to.list'|trans }}
+            </a>
+        </p>
+        </div>
+    {% else %}
+        <p>
+            {{ 'message.empty_list'|trans }}
+        </p>
+    {% endif %}
+{% endblock %}

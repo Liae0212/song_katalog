@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ 'create.create'|trans }}
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                {% include 'default/_form.html.twig' with {
+                    page_title: 'create.create'|trans,
+                    form: form,
+                    submit_label: 'save.save'|trans,
+                    back_to_list_path: 'task_index'
+                } %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

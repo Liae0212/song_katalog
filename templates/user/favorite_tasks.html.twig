@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Favorite Tasks{% endblock %}
+
+{% block body %}
+    <h1>Favorite Tasks for {{ user.username }}</h1>
+
+    {% if favoriteTasks is not empty %}
+        <ul>
+            {% for task in favoriteTasks %}
+                <li>{{ task.title }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No favorite tasks found.</p>
+    {% endif %}
+{% endblock %}

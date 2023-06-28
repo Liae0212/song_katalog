@@ -1,0 +1,81 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ 'user.user'|trans }}
+{% endblock %}
+
+{% block body %}
+    <nav class="nav" aria-label="breadcrumb" style="display: flex; align-items: center;">
+        <ol class="breadcrumb" style="flex: 1 1 auto;">
+            <li class="breadcrumb-item"><a href="{{ path('task_index') }}">{{ 'song.song'|trans }}</a></li>
+            <li class="breadcrumb-item"><a href="{{ path('category_index') }}">{{ 'category.category'|trans }}</a></li>
+            <li class="breadcrumb-item"><a href="{{ path('artist_index') }}">{{ 'artist.artist'|trans }}</a></li>
+            <li class="breadcrumb-item"><a href="{{ path('genre_index') }}">{{ 'genre.genre'|trans }}</a></li>
+            {% if is_granted('ROLE_USER') %}
+                <li class="breadcrumb-item"><a href="{{ path('tag_index') }}">{{ 'tag.list'|trans }}</a></li>
+            {% endif %}
+            {% if is_granted('ROLE_ADMIN') %}
+                <li class="breadcrumb-item"><a href="{{ path('comment_index') }}">{{ 'comment.comment'|trans }}</a></li>
+            {% endif %}
+            <li class="breadcrumb-item active" aria-current="page">{{ 'user.user'|trans }}</li>
+        </ol>
+        <div>
+            {% if is_granted('ROLE_USER') %}
+                <a href="{{ path('app_logout') }}">{{ 'logout.log'|trans }}</a>
+            {% else %}
+                <a href="{{ path('app_logout') }}">{{ 'login.log'|trans }}</a>
+                <a href="{{ path('app_register') }}">{{ 'register.log'|trans }}</a>
+            {% endif %}
+        </div>
+    </nav>
+
+    {% if is_granted('ROLE_ADMIN') %}
+        <div class="logged-user">
+            <p style="margin-left: 5px">{{ 'logged.as'|trans }}</p><a href="{{ path('user_index') }}" class="user">{{ app.user.userIdentifier }}</a>
+        </div>
+    {% elseif is_granted('ROLE_USER') %}
+        <div class="logged-user">
+            <p style="margin-left: 5px">{{ 'logged.as'|trans }}</p><a class="user" href="{{ path('user_show', {'id': app.user.id}) }}">{{ app.user.email }}</a>
+        </div>
+    {% else %}
+    {% endif %}
+
+                <h1>{{ 'user.user'|trans }}</h1>
+                {% if pagination is defined and pagination.items|length %}
+
+                    <div class="navigation text-center">
+                        {{ knp_pagination_render(pagination) }}
+                    </div>
+
+                    <table class="table table-striped">
+                        <thead>
+                        <tr>
+                            <th>{{ knp_pagination_sortable(pagination, 'id.id'|trans, 'user.id') }}</th>
+                            <th>{{ knp_pagination_sortable(pagination, 'email.email'|trans, 'user.email') }}</th>
+                            <th>{{ 'action.action'|trans }}</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for user in pagination.items %}
+                            <tr>
+                                <td>{{ user.id }}</td>
+                                <td>{{ user.email }}</td>
+                                <td>
+                                    <a href="{{ path('user_show', {'id': user.id}) }}">{{ 'show.show'|trans }}</a>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+
+                    <div class="navigation text-center">
+                        {{ knp_pagination_render(pagination) }}
+                    </div>
+
+                {% else %}
+                    <p>
+                        {{ 'message.empty_list'|trans }}
+                    </p>
+                {% endif %}
+
+{% endblock %}

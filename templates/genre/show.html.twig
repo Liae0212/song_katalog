@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ 'genre.genre'|trans({'%id%': genre.id|default('')}) }}
+{% endblock %}
+
+{% block body %}
+    <h1>{{ 'genre.genre'|trans({'%id%': genre.id|default('')}) }}</h1>
+    {% if genre is defined and genre|length %}
+        <dl class="dl-horizontal">
+            <dt>{{ 'id.id'|trans }}</dt>
+            <dd>{{ genre.id }}</dd>
+            <dt>{{ 'genre.genre'|trans }}</dt>
+            <dd>{{ genre.genre}}</dd>
+        </dl>
+
+        <h2>{{ 'What.song.has.this.genre'|trans }}</h2>
+        {% if genre.tasks is not empty %}
+            <ul>
+                {% for task in genre.tasks %}
+                    <li>{{ task.title }}</li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>{{ 'message.empty_list'|trans }}</p>
+        {% endif %}
+
+        <p>
+            <a href="{{ url('genre_index') }}" title="{{ 'back.to.list'|trans }}">
+                {{ 'back.to.list'|trans }}
+            </a>
+        </p>
+    {% else %}
+        <p>
+            {{ 'message.empty_list'|trans }}
+        </p>
+    {% endif %}
+{% endblock %}

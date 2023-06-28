@@ -1,0 +1,83 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ 'comment.comment'|trans }}
+{% endblock %}
+
+{% block body %}
+    <nav class="nav" aria-label="breadcrumb" style="display: flex; align-items: center;">
+        <ol class="breadcrumb" style="flex: 1 1 auto;">
+            <li class="breadcrumb-item"><a href="{{ path('task_index') }}">{{ 'song.song'|trans }}</a></li>
+            <li class="breadcrumb-item"><a href="{{ path('category_index') }}">{{ 'category.category'|trans }}</a></li>
+            <li class="breadcrumb-item"><a href="{{ path('artist_index') }}">{{ 'artist.artist'|trans }}</a></li>
+            <li class="breadcrumb-item"><a href="{{ path('genre_index') }}">{{ 'genre.genre'|trans }}</a></li>
+            <li class="breadcrumb-item"><a href="{{ path('tag_index') }}">{{ 'tag.tag'|trans }}</a></li>
+            <li class="breadcrumb-item active" aria-current="page">{{ 'comment.comment'|trans }}</li>
+        </ol>
+        <div>
+            {% if is_granted('ROLE_USER') %}
+                <a href="{{ path('app_logout') }}">{{ 'logout.log'|trans }}</a>
+            {% else %}
+                <a href="{{ path('app_logout') }}">{{ 'login.log'|trans }}</a>
+                <a href="{{ path('app_register') }}">{{ 'register.log'|trans }}</a>
+            {% endif %}
+        </div>
+    </nav>
+
+    {% if is_granted('ROLE_ADMIN') %}
+        <div class="logged-user">
+            <p style="margin-left: 5px">{{ 'logged.as'|trans }}</p><a href="{{ path('user_index') }}" class="user">{{ app.user.userIdentifier }}</a>
+        </div>
+    {% elseif is_granted('ROLE_USER') %}
+        <div class="logged-user">
+            <p style="margin-left: 5px">{{ 'logged.as'|trans }}</p><a class="user" href="{{ path('user_show', {'id': app.user.id}) }}">{{ app.user.email }}</a>
+        </div>
+    {% endif %}
+
+    <h1>{{ 'comment.comment'|trans }}</h1>
+
+    {% if pagination is defined and pagination.items|length %}
+
+        <div class="navigation text-center">
+            {{ knp_pagination_render(pagination) }}
+        </div>
+
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>{{ knp_pagination_sortable(pagination, 'id.id'|trans, 'comment.id') }}</th>
+                <th>{{ knp_pagination_sortable(pagination, 'content.content'|trans, 'comment.content') }}</th>
+                <th>{{ knp_pagination_sortable(pagination, 'email.email'|trans, 'comment.author.email') }}</th>
+                <th>{{ knp_pagination_sortable(pagination, 'nick.nick'|trans, 'comment.nick') }}</th>
+                <th>{{ 'edit.edit'|trans }}</th>
+                <th>{{ 'delete.delete'|trans }}</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for comment in pagination.items %}
+                <tr>
+                    <td>{{ comment.id }}</td>
+                    <td>{{ comment.content }}</td>
+                    <td>{{ comment.author.email }}</td>
+                    <td>{{ comment.nick }}</td>
+                    {% if is_granted('ROLE_ADMIN') %}
+                        <td><a href="{{ path('comment_edit', {'id': comment.id}) }}">Edit</a></td>
+                        <td>
+                            <a href="{{ path('comment_delete', {'id': comment.id}) }}"
+                               onclick="return confirm('{{ 'Are.you.sure.you.want.to.delete.this.comment?'|trans }}')">Delete</a>
+                        </td>
+                    {% endif %}
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+        <div class="navigation text-center">
+            {{ knp_pagination_render(pagination) }}
+        </div>
+
+    {% else %}
+        <p>{{ 'message.empty_list'|trans }}</p>
+    {% endif %}
+{% endblock %}
+

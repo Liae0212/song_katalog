@@ -1,0 +1,370 @@
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" datatype="plaintext" original="file.ext">
+    <body>
+      <trans-unit id="label.actions">
+        <source>label.actions</source>
+        <target>Akcje</target>
+      </trans-unit>
+      <trans-unit id="label.id">
+        <source>label.id</source>
+        <target>Id</target>
+      </trans-unit>
+      <trans-unit id="label.title">
+        <source>label.title</source>
+        <target>Tytuł</target>
+      </trans-unit>
+      <trans-unit id="label.content">
+        <source>label.content</source>
+        <target>Zawartość</target>
+      </trans-unit>
+      <trans-unit id="label.tags">
+        <source>label.tags</source>
+        <target>Tagi</target>
+      </trans-unit>
+      <trans-unit id="message.empty_list">
+        <source>message.empty_list</source>
+        <target>Lista jest pusta.</target>
+      </trans-unit>
+      <trans-unit id="message.record_not_found">
+        <source>message.record_not_found</source>
+        <target>Nie znaleziono rekordu.</target>
+      </trans-unit>
+      <trans-unit id="title.record_list">
+        <source>title.record_list</source>
+        <target>Lista rekordów</target>
+      </trans-unit>
+      <trans-unit id="title.record_view">
+        <source>title.record_view</source>
+        <target>Widok rekordu #%id%</target>
+      </trans-unit>
+      <trans-unit id="message.created_successfully">
+        <source>message.created_successfully</source>
+        <target>Pomyślnie utworzono</target>
+      </trans-unit>
+      <trans-unit id="message.deleted_successfully">
+        <source>message.deleted_successfully</source>
+        <target>Pomyślnie usunięto</target>
+      </trans-unit>
+      <trans-unit id="message.updated_successfully">
+        <source>message.updated_successfully</source>
+        <target>Pomyślnie zaktualizowano</target>
+      </trans-unit>
+      <trans-unit id="message.registered_successfully">
+        <source>message.registered_successfully</source>
+        <target>Pomyślnie zarejestrowano</target>
+      </trans-unit>
+      <trans-unit id="message.task_created_successfully">
+        <source>message.task_created_successfully</source>
+        <target>Pomyślnie utworzono zadanie</target>
+      </trans-unit>
+      <trans-unit id="create.create">
+        <source>create.create</source>
+        <target>Utwórz</target>
+      </trans-unit>
+      <trans-unit id="save.save">
+        <source>save.save</source>
+        <target>Zapisz</target>
+      </trans-unit>
+      <trans-unit id="delete.delete">
+        <source>delete.delete</source>
+        <target>Usuń</target>
+      </trans-unit>
+      <trans-unit id="edit.edit">
+        <source>edit.edit</source>
+        <target>Edytuj</target>
+      </trans-unit>
+      <trans-unit id="artist.artist">
+        <source>artist.artist</source>
+        <target>Artysta</target>
+      </trans-unit>
+      <trans-unit id="song.song">
+        <source>song.song</source>
+        <target>Piosenka</target>
+      </trans-unit>
+      <trans-unit id="category.category">
+        <source>category.category</source>
+        <target>Kategoria</target>
+      </trans-unit>
+      <trans-unit id="genre.genre">
+        <source>genre.genre</source>
+        <target>Gatunek</target>
+      </trans-unit>
+      <trans-unit id="tag.tag">
+        <source>tag.tag</source>
+        <target>Tag</target>
+      </trans-unit>
+      <trans-unit id="comment.comment">
+        <source>comment.comment</source>
+        <target>Komentarz</target>
+      </trans-unit>
+      <trans-unit id="logout.log">
+        <source>logout.log</source>
+        <target>Wyloguj</target>
+      </trans-unit>
+      <trans-unit id="login.log">
+        <source>login.log</source>
+        <target>Zaloguj</target>
+      </trans-unit>
+      <trans-unit id="register.log">
+        <source>register.log</source>
+        <target>Zarejestruj</target>
+      </trans-unit>
+      <trans-unit id="logged.as">
+        <source>logged.as</source>
+        <target>Zalogowany jako</target>
+      </trans-unit>
+      <trans-unit id="id.id">
+        <source>id.id</source>
+        <target>ID</target>
+      </trans-unit>
+      <trans-unit id="actions.actions">
+        <source>actions.actions</source>
+        <target>Akcje</target>
+      </trans-unit>
+      <trans-unit id="show.show">
+        <source>show.show</source>
+        <target>Pokaż</target>
+      </trans-unit>
+      <trans-unit id="Are.you sure.you want.to.delete.this.artist?">
+        <source>Are.you sure.you want.to.delete.this.artist?</source>
+        <target>Czy na pewno chcesz usunąć tego artystę?</target>
+      </trans-unit>
+      <trans-unit id="admin.only">
+        <source>admin.only</source>
+        <target>Tylko dla administratorów</target>
+      </trans-unit>
+      <trans-unit id="is.id">
+        <source>is.id</source>
+        <target>Jest</target>
+      </trans-unit>
+      <trans-unit id="name.name">
+        <source>name.name</source>
+        <target>Nazwa</target>
+      </trans-unit>
+      <trans-unit id="back.to.list">
+        <source>back.to.list</source>
+        <target>Powrót do listy</target>
+      </trans-unit>
+      <trans-unit id="action_logout">
+        <source>action_logout</source>
+        <target>Wyloguj</target>
+      </trans-unit>
+      <trans-unit id="action_login">
+        <source>action_login</source>
+        <target>Zaloguj</target>
+      </trans-unit>
+      <trans-unit id="genre.list">
+        <source>genre.list</source>
+        <target>Lista gatunków</target>
+      </trans-unit>
+      <trans-unit id="action.action">
+        <source>action.action</source>
+        <target>Akcja</target>
+      </trans-unit>
+      <trans-unit id="Are.you.sure.you.want.to.delete.this.category?">
+        <source>Are.you.sure.you.want.to.delete.this.category?</source>
+        <target>Czy na pewno chcesz usunąć tę kategorię?</target>
+      </trans-unit>
+      <trans-unit id="Songs.in.this.category">
+        <source>Songs.in.this.category</source>
+        <target>Piosenki w tej kategorii</target>
+      </trans-unit>
+      <trans-unit id="back_to_list">
+        <source>back_to_list</source>
+        <target>Powrót do listy</target>
+      </trans-unit>
+      <trans-unit id="submit">
+        <source>submit</source>
+        <target>Wyślij</target>
+      </trans-unit>
+      <trans-unit id="content.content">
+        <source>content.content</source>
+        <target>Zawartość</target>
+      </trans-unit>
+      <trans-unit id="email.email">
+        <source>email.email</source>
+        <target>Email</target>
+      </trans-unit>
+      <trans-unit id="nick.nick">
+        <source>nick.nick</source>
+        <target>Pseudonim</target>
+      </trans-unit>
+      <trans-unit id="Are.you.sure.you.want.to.delete.this.comment?">
+        <source>Are.you.sure.you.want.to.delete.this.comment?</source>
+        <target>Czy na pewno chcesz usunąć ten komentarz?</target>
+      </trans-unit>
+      <trans-unit id="error">
+        <source>error</source>
+        <target>Błąd</target>
+      </trans-unit>
+      <trans-unit id="Back to categories">
+        <source>Back to categories</source>
+        <target>Powrót do kategorii</target>
+      </trans-unit>
+      <trans-unit id="Are.you.sure.you.want.to.delete.this.genre?">
+        <source>Are.you.sure.you.want.to.delete.this.genre?</source>
+        <target>Czy na pewno chcesz usunąć ten gatunek?</target>
+      </trans-unit>
+      <trans-unit id="What.song.has.this.genre">
+        <source>What.song.has.this.genre</source>
+        <target>Jaka piosenka należy do tego gatunku?</target>
+      </trans-unit>
+      <trans-unit id="log.in!">
+        <source>log.in!</source>
+        <target>Zaloguj się!</target>
+      </trans-unit>
+      <trans-unit id="Please.sign.in">
+        <source>Please.sign.in</source>
+        <target>Proszę zaloguj się</target>
+      </trans-unit>
+      <trans-unit id="password.password">
+        <source>password.password</source>
+        <target>Hasło</target>
+      </trans-unit>
+      <trans-unit id="sign.in">
+        <source>sign.in</source>
+        <target>Zaloguj się</target>
+      </trans-unit>
+      <trans-unit id="Back.to.Song.List">
+        <source>Back.to.Song.List</source>
+        <target>Powrót do listy piosenek</target>
+      </trans-unit>
+      <trans-unit id="Are.you.sure.you.want.to.delete.this.tag?">
+        <source>Are.you.sure.you.want.to.delete.this.tag?</source>
+        <target>Czy na pewno chcesz usunąć ten tag?</target>
+      </trans-unit>
+      <trans-unit id="Songs.with.this.tag">
+        <source>Songs.with.this.tag</source>
+        <target>Piosenki z tym tagiem</target>
+      </trans-unit>
+      <trans-unit id="tag.list">
+        <source>tag.list</source>
+        <target>Lista tagów</target>
+      </trans-unit>
+      <trans-unit id="created.at">
+        <source>created.at</source>
+        <target>Data utworzenia</target>
+      </trans-unit>
+      <trans-unit id="updated.at">
+        <source>updated.at</source>
+        <target>Data aktualizacji</target>
+      </trans-unit>
+      <trans-unit id="Are.you.sure.you.want.to.delete.this.song?">
+        <source>Are.you.sure.you.want.to.delete.this.song?</source>
+        <target>Czy na pewno chcesz usunąć tę piosenkę?</target>
+      </trans-unit>
+      <trans-unit id="category.list">
+        <source>category.list</source>
+        <target>Lista kategorii</target>
+      </trans-unit>
+      <trans-unit id="Edit a song">
+        <source>Edit a song</source>
+        <target>Edytuj piosenkę</target>
+      </trans-unit>
+      <trans-unit id="create a song">
+        <source>create a song</source>
+        <target>Utwórz piosenkę</target>
+      </trans-unit>
+      <trans-unit id="name_of_artist">
+        <source>name_of_artist</source>
+        <target>Nazwa artysty</target>
+      </trans-unit>
+      <trans-unit id="create_a_genre">
+        <source>create_a_genre</source>
+        <target>Utwórz gatunek</target>
+      </trans-unit>
+      <trans-unit id="create_a_category">
+        <source>create_a_category</source>
+        <target>Utwórz kategorię</target>
+      </trans-unit>
+      <trans-unit id="tag_list">
+        <source>tag_list</source>
+        <target>Lista tagów</target>
+      </trans-unit>
+      <trans-unit id="comment_list">
+        <source>comment_list</source>
+        <target>Lista komentarzy</target>
+      </trans-unit>
+      <trans-unit id="song_list">
+        <source>song_list</source>
+        <target>Lista piosenek</target>
+      </trans-unit>
+      <trans-unit id="artist_list">
+        <source>artist_list</source>
+        <target>Lista artystów</target>
+      </trans-unit>
+      <trans-unit id="Are you sure you want to delete this user?">
+        <source>Are you sure you want to delete this user?</source>
+        <target>Czy na pewno chcesz usunąć tego użytkownika?</target>
+      </trans-unit>
+      <trans-unit id="User List">
+        <source>User List</source>
+        <target>Lista użytkowników</target>
+      </trans-unit>
+      <trans-unit id="Are you sure you want to delete this record?">
+        <source>Are you sure you want to delete this record?</source>
+        <target>Czy na pewno chcesz usunąć ten rekord?</target>
+      </trans-unit>
+      <trans-unit id="Record List">
+        <source>Record List</source>
+        <target>Lista rekordów</target>
+      </trans-unit>
+      <trans-unit id="Record View">
+        <source>Record View</source>
+        <target>Podgląd rekordu</target>
+      </trans-unit>
+      <trans-unit id="title.title">
+        <source>title.title</source>
+        <target>Tytuł</target>
+      </trans-unit>
+      <trans-unit id="The.list.is.empty">
+        <source>The.list.is.empty</source>
+        <target>Lista jest pusta</target>
+      </trans-unit>
+      <trans-unit id="email.edit">
+        <source>email.edit</source>
+        <target>Edytuj adres e-mail</target>
+      </trans-unit>
+      <trans-unit id="user.user">
+        <source>user.user</source>
+        <target>Użytkownik</target>
+      </trans-unit>
+      <trans-unit id="Edit.email">
+        <source>Edit.email</source>
+        <target>Edytuj adres e-mail</target>
+      </trans-unit>
+      <trans-unit id="Edit.password">
+        <source>Edit.password</source>
+        <target>Edytuj hasło</target>
+      </trans-unit>
+      <trans-unit id="created_successfully">
+        <source>Created successfully</source>
+        <target>Utworzono pomyślnie</target>
+      </trans-unit>
+      <trans-unit id="artist_contains_tasks">
+        <source>Artist contains tasks</source>
+        <target>Artysta zawiera zadania</target>
+      </trans-unit>
+      <trans-unit id="deleted_successfully">
+        <source>Deleted successfully</source>
+        <target>Usunięto pomyślnie</target>
+      </trans-unit>
+      <trans-unit id="category_contains_tasks">
+        <source>Category contains tasks</source>
+        <target>Kategoria zawiera zadania</target>
+      </trans-unit>
+      <trans-unit id="genre_contains_tasks">
+        <source>Genre contains tasks</source>
+        <target>Gatunek zawiera zadania</target>
+      </trans-unit>
+      <trans-unit id="updated_successfully">
+        <source>Updated successfully</source>
+        <target>Zaktualizowano pomyślnie</target>
+      </trans-unit>
+      <trans-unit id="add.add">
+        <source>add.add</source>
+        <target>Dodano</target>
+      </trans-unit>
+      </body>
+        </file>
+      </xliff>

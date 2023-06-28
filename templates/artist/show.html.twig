@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ 'artist.artist'|trans({'%id%': artist.id|default('')}) }}
+{% endblock %}
+
+{% block body %}
+    <h1>{{ 'artist.artist'|trans({'%id%': artist.id|default('')}) }}</h1>
+    {% if artist is defined and artist|length %}
+        <dl class="dl-horizontal">
+            <dt>{{ 'is.id'|trans }}</dt>
+            <dd>{{ artist.id }}</dd>
+            <dt>{{ 'name.name'|trans }}</dt>
+            <dd>{{ artist.name }}</dd>
+        </dl>
+
+        <h2>{{ 'message.empty_list'|trans }}</h2>
+        {% if artist.tasks is not empty %}
+            <ul>
+                {% for task in artist.tasks %}
+                    <li>{{ task.title }}</li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>{{ 'message.empty_list'|trans }}</p>
+        {% endif %}
+
+        <p>
+            <a href="{{ url('artist_index') }}" title="{{ 'back.to.list'|trans }}">
+                {{ 'back.to.list'|trans }}
+            </a>
+        </p>
+    {% else %}
+        <p>
+            {{ 'message.empty_list'|trans }}
+        </p>
+    {% endif %}
+{% endblock %}

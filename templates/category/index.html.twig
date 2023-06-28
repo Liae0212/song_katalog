@@ -1,0 +1,81 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ 'category.category'|trans }}
+{% endblock %}
+
+{% block body %}
+    <nav class="nav" aria-label="breadcrumb" style="display: flex; align-items: center;">
+        <ol class="breadcrumb" style="flex: 1 1 auto;">
+            <li class="breadcrumb-item"><a href="{{ path('task_index') }}">{{ 'song.song'|trans }}</a></li>
+            <li class="breadcrumb-item"><a href="{{ path('artist_index') }}">{{ 'artist.artist'|trans }}</a></li>
+            <li class="breadcrumb-item"><a href="{{ path('genre_index') }}">{{ 'genre.list'|trans }}</a></li>
+            {% if is_granted('ROLE_USER') %}
+                <li class="breadcrumb-item"><a href="{{ path('tag_index') }}">{{ 'tag.tag'|trans }}</a></li>
+            {% endif %}
+            {% if is_granted('ROLE_ADMIN') %}
+                <li class="breadcrumb-item"><a href="{{ path('comment_index') }}">{{ 'comment.comment'|trans }}</a></li>
+            {% endif %}
+            <li class="breadcrumb-item active" aria-current="page">{{ 'category.category'|trans }}</li>
+        </ol>
+        <div>
+            {% if is_granted('ROLE_USER') %}
+                <a href="{{ path('app_logout') }}">{{ 'logout.log'|trans }}</a>
+            {% else %}
+                <a href="{{ path('app_logout') }}">{{ 'login.log'|trans }}</a>
+                <a href="{{ path('app_register') }}">{{ 'register.log'|trans }}</a>
+            {% endif %}
+        </div>
+    </nav>
+    {% if is_granted('ROLE_ADMIN') %}
+        <div class="logged-user">
+            <p style="margin-left: 5px">{{ 'logged.as'|trans }}</p><a href="{{ path('user_index') }}" class="user">{{ app.user.userIdentifier }}</a>
+        </div>
+    {% elseif is_granted('ROLE_USER') %}
+        <div class="logged-user">
+            <p style="margin-left: 5px">{{ 'logged.as'|trans }}</p><a class="user" href="{{ path('user_show', {'id': app.user.id}) }}">{{ app.user.email }}</a>
+        </div>
+    {% endif %}
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th>{{ knp_pagination_sortable(pagination, 'id.id'|trans, 'category.id') }}</th>
+            <th>{{ knp_pagination_sortable(pagination, 'title.title'|trans, 'category.title') }}</th>
+            <th>{{ 'action.action'|trans }}</th>
+            {% if is_granted('ROLE_USER') %}
+                <th>{{ 'edit.edit'|trans }}</th>
+                <th>{{ 'delete.delete'|trans }}</th>
+            {% endif %}
+        </tr>
+        </thead>
+        <tbody>
+        {% for category in pagination %}
+            <tr>
+                <td>{{ category.id }}</td>
+                <td>{{ category.title }}</td>
+                <td><a href="{{ path('category_show', {'id': category.id}) }}">{{ 'show.show'|trans }}</a></td>
+                {% if is_granted('ROLE_USER') %}
+                    {% if is_granted('ROLE_ADMIN') %}
+                        <td><a href="{{ path('category_edit', {'id': category.id}) }}">{{ 'edit.edit'|trans }}</a></td>
+                        <td>
+                            <a href="{{ path('category_delete', {'id': category.id}) }}"
+                               onclick="return confirm('{{ 'Are.you.sure.you.want.to.delete.this.category?'|trans }}')">{{ 'delete.delete'|trans }}</a>
+                        </td>
+                    {% else %}
+                        <td>{{ 'admin.only'|trans }}</td>
+                        <td>{{ 'admin.only'|trans }}</td>
+                    {% endif %}
+                {% endif %}
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    {{ knp_pagination_render(pagination) }}
+
+    {% if is_granted('ROLE_ADMIN') %}
+        <a href="{{ path('category_create') }}" class="btn btn-primary">{{ 'create.create'|trans }}</a>
+    {% endif %}
+
+{% endblock %}

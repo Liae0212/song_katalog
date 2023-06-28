@@ -1,0 +1,59 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ 'song.song'|trans({'%id%': task.id|default('')}) }}
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1>{{ 'song.song'|trans({'%id%': task.id|default('')}) }}</h1>
+        {% if task %}
+            <p><strong>{{ 'id.id'|trans }}</strong>: {{ task.id }}</p>
+            <p><strong>{{ 'title.title'|trans }}</strong>: {{ task.title }}</p>
+            <p><strong>{{ 'category.category'|trans }}</strong>: {{ task.category.title }}</p>
+
+            <h2>{{ 'tag.tag'|trans }}</h2>
+            {% if task.tags is not empty %}
+                <ul>
+                    {% for tag in task.tags %}
+                        <li>{{ tag.title }}</li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <p>{{ 'message.empty_list'|trans }}</p>
+            {% endif %}
+
+            <h2>{{ 'comment.comment'|trans }}</h2>
+            {% if task.comments is not empty %}
+                <ul>
+                    {% for comment in task.comments %}
+                        <li>
+                            <p><strong>{{ 'nick.nick'|trans }}</strong>: {{ comment.nick }}</p>
+                            <p><strong>{{ 'email.email'|trans }}</strong>: {{ comment.author.email }}</p>
+                            <p><strong>{{ 'content.content'|trans }}</strong>: {{ comment.content }}</p>
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <p>{{ 'message.empty_list'|trans }}</p>
+            {% endif %}
+
+            {% if is_granted('ROLE_USER') %}
+                <a class="btn btn-success" href="{{ path('comment_create', {'id': task.id}) }}">
+                    {{ 'add.add'|trans }}
+                </a>
+            {% endif %}
+        {% else %}
+            <p>
+                {{ 'message.empty_list'|trans }}
+            </p>
+        {% endif %}
+
+        <p>
+            <a class="back-btn" href="{{ path('task_index') }}" title="{{ 'back.to.list'|trans }}">
+                {{ 'back.to.list'|trans }}
+            </a>
+        </p>
+    </div>
+{% endblock %}
+

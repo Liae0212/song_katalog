@@ -1,0 +1,63 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --dp: #a478b8;
+    --p: #e0c2f2;
+    --l: #f7e7fb;
+    --o: #f5ae52;
+    --r: #fc7869;
+    --b: #000000;
+    --w: #ffffff;
+
+}
+
+body{
+    background-color: var(--l);
+}
+.nav{
+    background-color: var(--p);
+    color: var(--b);
+}
+.page-item:first-child .page-link {
+    background-color: var(--r);
+    color: var(--w);
+    border: none;
+}
+
+
+.page-item.active .page-link {
+    background-color: var(--o);
+    color: black;
+    border: none;
+}
+
+.page-link {
+    background-color: var(--r);
+    color: #07020D;
+    border: none;
+}
+
+.btn.btn-primary
+{
+    background-color: var(--r);
+}
+
+.btn.btn-secondary
+{
+    background-color: var(--o)
+}
+
+.btn.btn-success
+{
+    background-color: var(--o)
+}
+
+
+.btn.btn-link
+{
+    color: var(--dp);
+}
