@@ -1,12 +1,22 @@
-{% include 'default/_form.html.twig' with {
-    page_title: 'email.edit'|trans,
-    page_title_param: {'%id%': user.id},
-    submit_label: 'label.update',
-    attr: {
-        method: 'PUT',
-        action: url('user_edit_email', {'id': user.id}),
-    },
-    form: form,
-    submit_label: 'email.edit'|trans,
-    back_to_list_path: 'task_index'
-} %}
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ 'email.edit'|trans }}
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <h1>{{ 'email.edit'|trans }}</h1>
+                <form method="POST" action="{{ url('user_edit_email', {'id': user.id}) }}">
+                    {{ form_start(form) }}
+                    {{ form_widget(form) }}
+                    <button type="submit" class="btn btn-primary">{{ 'edit.edit'|trans }}</button>
+                    <a href="{{ url('task_index') }}" class="btn btn-secondary">{{ 'back.to.list'|trans }}</a>
+                    {{ form_end(form) }}
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}
