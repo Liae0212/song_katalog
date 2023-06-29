@@ -8,13 +8,16 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6 offset-md-3">
-                {% include 'default/_form.html.twig' with {
-                    page_title: 'edit.edit'|trans({'%id%': tag.id|default('')}),
-                    form: form,
-                    submit_label: 'edit.edit'|trans,
-                    back_to_list_path: 'user_index'
-                } %}
+                <h1>{{ 'edit.edit'|trans({'%id%': tag.id|default('')}) }}</h1>
+                <form method="POST" action="{{ url('user_index') }}">
+                    {{ form_start(form) }}
+                    {{ form_widget(form) }}
+                    <button type="submit" class="btn btn-primary">{{ 'edit.edit'|trans }}</button>
+                    <a href="{{ url('user_index') }}" class="btn btn-secondary">{{ 'back.to.list'|trans }}</a>
+                    {{ form_end(form) }}
+                </form>
             </div>
         </div>
     </div>
 {% endblock %}
+
