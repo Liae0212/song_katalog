@@ -1,10 +1,22 @@
-{% include 'default/_form.html.twig' with {
-    page_title: 'register.log'|trans,
-    attr: {
-        method: 'POST',
-        action: url('app_register')
-    },
-    form: form,
-    submit_label: 'register.log'|trans,
-    back_to_list_path: 'app_login',
-} %}
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ 'register.log'|trans }}
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <h1>{{ 'register.log'|trans }}</h1>
+                <form method="POST" action="{{ url('app_register') }}">
+                    {{ form_start(form) }}
+                    {{ form_widget(form) }}
+                    <button type="submit" class="btn btn-primary">{{ 'register.log'|trans }}</button>
+                    <a href="{{ url('app_login') }}" class="btn btn-secondary">{{ 'back.to.login'|trans }}</a>
+                    {{ form_end(form) }}
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}
