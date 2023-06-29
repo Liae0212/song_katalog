@@ -6,13 +6,13 @@
 
 {% block body %}
     <div class="container">
-        <h1 class="user-details">{{ 'user.user'|trans({'%id%': user.id|default('')}) }}</h1>
+        <h1>{{ 'user.user'|trans({'%id%': user.id|default('')}) }}</h1>
 
         {% if user is defined and user|length %}
-            <h1 class="user-text">{{ 'id.id'|trans }}</h1>
-            <h1 class="user-data">{{ user.id }}</h1>
-            <h1 class="user-text">{{ 'email.email'|trans }}</h1>
-            <h1 class="user-data">{{ user.email }}</h1>
+            <p>{{ 'id.id'|trans }}</p>
+            <p><strong>{{ user.id }}</strong></p>
+            <p>{{ 'email.email'|trans }}</p>
+            <p><strong>{{ user.email }}</strong></p>
 
             {% if is_granted('EDIT_USER_DATA', user) %}
                 <div class="edit-btn">
